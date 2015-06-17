@@ -27,7 +27,7 @@ var BaseURL string
 var environment map[string]bool = make(map[string]bool)
 
 //Headers solo para testing
-var HeadersTesteo http.Header
+//var HeadersTesteo http.Header
 
 //Start - Start the application
 func Start() {
@@ -48,9 +48,6 @@ func Start() {
 	webserverSetUp()
 
 	//Imprime el cartel de bienvenida
-	welcomeScreen()
-
-	//Imprime la pantalla de bienvenida
 	welcomeScreen()
 
 }
@@ -320,9 +317,9 @@ func Get(urlString string, headers map[string]string) (string, int, error) {
 	}
 
 	//solamente para poder hacer un test y ver si se setean bien los headers
-	if !environment["production"] {
-		HeadersTesteo = req.Header
-	}
+	//if !environment["production"] {
+	//	HeadersTesteo = req.Header
+	//}
 
 	//realiza el request mediante el cliente
 	resp, err2 := client.Do(req)
